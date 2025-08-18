@@ -21,3 +21,44 @@ Namaste react
 15- Https
 16- Tree shaking - remove unused code
 17- Different dev and production bundles
+
+
+# Namaste food
+/**
+ * Header
+ *  - Logo
+ *  - Nav Items
+ * Body
+ *  - Search Bar
+ *  - RestaurantContainer
+ *    - RestaurantCard
+ *      - Image
+ *      - Name of restaurant , Star rating , cuisine , Delivery time
+ * Footer
+ *  - Copyright
+ *  - Links
+ *  - Address
+ *  - Contact
+ */
+
+
+ Two types of Export/Import
+
+ - Default Export/Import
+
+ export default component;
+ import component from "path";
+
+ - Named Export/Import
+
+ export const component;
+ import{component} from "path";
+
+ # React Hook 
+- Normal Javascript utility funtion (Written by facebook developers)
+- Two most important hooks are : 
+useState() - Superpowerful State variables in react
+useEffect()
+
+# Notes
+- Whenever a state variable updates react will re render my component.

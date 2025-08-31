@@ -29,7 +29,9 @@ const Body = () => {
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
-
+  // useEffect(()=>{
+  //   setFilteredRestaurant(listOfRestaurant)
+  // },[listOfRestaurant])
   // Conditional rendering - (Rendering on the basis of condition is known as conditional rendering)
   return listOfRestaurant.length === 0 ? (
     <Shimmer />
@@ -50,10 +52,10 @@ const Body = () => {
               //Filter the restaurant cards and update the UI
               //search text
               const filteredRestaurant = listOfRestaurant.filter((res) =>
-                res.data.name.toLowerCase().includes(searchText.toLowerCase())
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
 
-              setListOfRestaurant(filteredRestaurant);
+              setFilteredRestaurant(filteredRestaurant);
             }}
           >
             Search
@@ -62,16 +64,16 @@ const Body = () => {
         <button
           className="filter-btn"
           onClick={() => {
-            const filteredList = resObj.filter((res) => res.rating > 4);
-            setListOfRestaurant(filteredList);
+            const filteredList = listOfRestaurant.filter((res) => res.info.avgRating > 4.5);
+            setFilteredRestaurant(filteredList);
           }}
         >
           Top rated restaurant
         </button>
       </div>
       <div className="res-container">
-        {filteredRestaurant?.map((restaurant, idx) => (
-          <RestaurantCard key={idx} resData={restaurant} />
+        {filteredRestaurant?.map((restaurant, id) => (
+          <RestaurantCard key={id} resData={restaurant} />
         ))}
       </div>
     </div>

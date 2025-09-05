@@ -8,6 +8,8 @@ const Body = () => {
 
   const [searchText, setSearchText] = useState("");
 
+  console.log("Body Rendered");
+
   // Whenever state variables update , react triggers a reconciliation cycle (re-renders component) xx
 
   useEffect(() => {
